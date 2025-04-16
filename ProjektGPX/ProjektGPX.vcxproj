@@ -127,7 +127,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="PlikGPX.cpp" />
     <ClCompile Include="ProjektGPX.cpp" />
+    <ClCompile Include="PunktMapa.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="PlikGPX.h" />
+    <ClInclude Include="PunktMapa.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\..\..\Pulpit\Czernica.gpx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\Pulpit\Gdynia.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
