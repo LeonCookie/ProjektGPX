@@ -20,5 +20,6 @@ public:
 
 	//metody
 	void wczytaj();
+
 };
 
