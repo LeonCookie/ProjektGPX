@@ -136,10 +136,10 @@
     <ClInclude Include="PunktMapa.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\..\..\..\Pulpit\Czernica.gpx" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\..\..\..\..\Pulpit\Gdynia.txt" />
+    <Text Include="..\..\..\..\..\..\Pulpit\Czernica.txt" />
+    <Text Include="..\..\..\..\..\..\Pulpit\Gdynia.txt">
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</DeploymentContent>
+    </Text>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
