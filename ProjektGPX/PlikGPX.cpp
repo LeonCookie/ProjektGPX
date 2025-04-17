@@ -23,11 +23,14 @@ void PlikGPX::wczytaj()
 	double szer=0.0, dl = 0.0, wys=0.0;
 	while (getline(file, liniaPliku)) {
 		//cout << liniaPliku << endl;
-		if (liniaPliku.substr(0, 6) == "<trkpt") {
-
-		}
+		//if(liniaPliku)
 	}
 
 
 
+}
+
+vector<PunktMapa> PlikGPX::zwrocPunkty()
+{
+	return PunktyV;
 }

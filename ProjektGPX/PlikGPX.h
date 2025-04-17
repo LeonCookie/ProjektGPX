@@ -20,6 +20,6 @@ public:
 
 	//metody
 	void wczytaj();
-
+	vector<PunktMapa> zwrocPunkty();// zwraca wektor punktow wyciagnietych z pliku
 };
 

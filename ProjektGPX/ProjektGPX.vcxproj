@@ -127,11 +127,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AnalizTrasa.cpp" />
     <ClCompile Include="PlikGPX.cpp" />
     <ClCompile Include="ProjektGPX.cpp" />
     <ClCompile Include="PunktMapa.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AnalizTrasa.h" />
     <ClInclude Include="PlikGPX.h" />
     <ClInclude Include="PunktMapa.h" />
   </ItemGroup>
