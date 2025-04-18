@@ -14,4 +14,5 @@ int main()
 	PlikGPX CzernicaPlik("sciezka rybaczyk");
 	*/
 	GdyniaPlik.wczytaj();
+	GdyniaPlik.wypiszPunkty();
 }
