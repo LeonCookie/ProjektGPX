@@ -15,7 +15,8 @@ int main()
 	PlikGPX CzernicaPlik("sciezka rybaczyk");
 	*/
 	GdyniaPlik.wczytaj();
-	GdyniaPlik.wypiszPunkty();
+	//GdyniaPlik.wypiszPunkty();
+	GdyniaPlik.oszukajObliczanie();
 	AnalizTrasa GdyniaAnaliza(GdyniaPlik.zwrocPunkty());
 	GdyniaAnaliza.czasCalkowity();
 	GdyniaAnaliza.dystansCalkowity();

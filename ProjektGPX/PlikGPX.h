@@ -22,6 +22,7 @@ public:
 	//metody
 	void wczytaj();
 	void wypiszPunkty();//metoda próbna do wyœwietlenia zgodnoœci danych z plikiem
+	void oszukajObliczanie();//metoda która zwraca nam ostantie wartosci z pliku tzn. <exerciseinfo>
 	vector<PunktMapa> zwrocPunkty();// zwraca wektor punktow wyciagnietych z pliku
 };
 

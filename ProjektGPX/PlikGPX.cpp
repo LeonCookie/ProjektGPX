@@ -11,6 +11,30 @@ PlikGPX::PlikGPX(string sciezka)
 {
 	this->sciezka = sciezka;
 }
+double wyciagnijWartoscStrzalka(string linia) {
+	string liczbaZpliku = "";
+	int licznikZnacznika = 0;
+
+	for (char znak : linia) {
+		if (znak == '>') {
+			licznikZnacznika++;
+		}
+		else if (licznikZnacznika == 1 && znak != '<')
+		{
+			liczbaZpliku += znak;
+		}
+		if (znak == '<' && licznikZnacznika == 1)
+		{
+			if (!liczbaZpliku.empty()) {
+				return stod(liczbaZpliku);
+			}
+			break; 
+		}
+	}
+
+	
+	return 0.0; 
+}
 
 void PlikGPX::wczytaj()
 {
@@ -63,28 +87,7 @@ void PlikGPX::wczytaj()
 		//szukanie wysykoœci
 		if (liniaPliku.find("<ele>") == 0)
 		{
-			string liczbaZpliku = "";
-			int licznikZnacznika = 0;
-
-			for (char znak : liniaPliku) {
-				if (znak == '>') {
-					licznikZnacznika++;
-					continue;
-				}
-				if (licznikZnacznika == 1 && znak != '<')
-				{
-					liczbaZpliku += znak;
-				}
-				if (znak == '<' && licznikZnacznika == 1)
-				{
-					if (!liczbaZpliku.empty())
-					{
-						wys = stod(liczbaZpliku);
-						liczbaZpliku = "";
-					}
-					break; // ten break do wyjebania, ale na razie zostawiam (W myœl filozofii informatyków - jak dzia³a to nie ruszaj). Ogolnie breaków trzeba unikaæ jak ognia
-				}
-			}
+			wys = wyciagnijWartoscStrzalka(liniaPliku);
 		}
 
 		//szukanie daty	
@@ -128,7 +131,7 @@ void PlikGPX::wczytaj()
 //wypisywanie punktów na konsoli
 void PlikGPX::wypiszPunkty()
 {
-	/*
+	
 	for (auto punkt : PunktyV) 
 	{
 		cout <<"Szerokosc"<<endl << setprecision(15) << punkt.getSzerrokoscG()<<endl;
@@ -141,7 +144,45 @@ void PlikGPX::wypiszPunkty()
 		cout <<"======================" << endl<<endl;
 
 	}
-	*/
+	
+}
+
+
+void PlikGPX::oszukajObliczanie()
+{
+	ifstream file(sciezka);
+	string liniaPliku;
+	if (!file.is_open()) {
+		cout << "Zlyplik" << endl;
+	}
+	double dis = 0.0, ele = 0.0, avggr = 0.0, durat = 0.0, avgspeed = 0.0;
+	while (getline(file, liniaPliku))
+	{
+		if (liniaPliku.find("<distance>") == 0) {
+			dis = wyciagnijWartoscStrzalka(liniaPliku);
+		}
+		if (liniaPliku.find("<elevationgain>") == 0) {
+			ele = wyciagnijWartoscStrzalka(liniaPliku);
+		}
+		if (liniaPliku.find("<avggradient>") == 0) {
+			avggr = wyciagnijWartoscStrzalka(liniaPliku);
+		}
+		if (liniaPliku.find("<duration>") == 0) {
+			durat = wyciagnijWartoscStrzalka(liniaPliku);
+			durat = durat / 1000;
+		}
+		if (liniaPliku.find("<avgspeed>") == 0) {
+			avgspeed = wyciagnijWartoscStrzalka(liniaPliku);
+			break;
+		}
+	}
+	cout << "-------------cheatsheet----------------" << endl;
+	cout << "oszukane czytane wartosci dystans: " << dis << endl;
+	cout << "ilosc wspiec(w m): " << ele << endl;
+	cout << "srednie nachylenie: " << avggr << endl;
+	cout << "czas trwania(s): " << durat << endl;
+	cout << "srednia predkosc (m/s): " << avgspeed << endl;
+	cout << "---------------------------------------" << endl;
 }
 
 
