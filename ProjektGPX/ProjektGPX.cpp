@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include"PlikGPX.h"
+#include"AnalizTrasa.h"
 int main()
 {
 	//z jakegos powodu plik nie wczutuje sie gdy uzywamy \ lub \\(blad cerr), ale juz tak gdy/ tak jak ponizej
@@ -15,4 +16,9 @@ int main()
 	*/
 	GdyniaPlik.wczytaj();
 	GdyniaPlik.wypiszPunkty();
+	AnalizTrasa GdyniaAnaliza(GdyniaPlik.zwrocPunkty());
+	GdyniaAnaliza.czasCalkowity();
+	GdyniaAnaliza.dystansCalkowity();
+	GdyniaAnaliza.predkosci();
+
 }

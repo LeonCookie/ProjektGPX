@@ -11,16 +11,17 @@ class PlikGPX
 {
 private:
 	string sciezka;
+protected:
 	vector<PunktMapa>PunktyV;
 public:
-	
+
 	PlikGPX();//konstruktor domyslny
 	PlikGPX(string sciezka);
 
 
 	//metody
 	void wczytaj();
-	void wypiszPunkty();
+	void wypiszPunkty();//metoda próbna do wyœwietlenia zgodnoœci danych z plikiem
 	vector<PunktMapa> zwrocPunkty();// zwraca wektor punktow wyciagnietych z pliku
 };
 

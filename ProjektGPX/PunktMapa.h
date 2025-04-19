@@ -13,11 +13,11 @@ private:
 
 public:
 	PunktMapa();//konstruktor domyslny
-	PunktMapa(double szerokoscG, double dlugoscG, double wysokosc, string czas);
+	PunktMapa(double szerokoscG, double dlugoscG, double wysokosc, string czas);//konstruktor zdefiniowany
 
-	//set
-	
+
 	//G-geograficzna
+	//set
 	void setSzerokoscG(double szerokoscG);
 	void setDlugoscG(double dlugoscG);
 	void setWysokosc(double wysokosc);

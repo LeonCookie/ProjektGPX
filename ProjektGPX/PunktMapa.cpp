@@ -5,9 +5,10 @@ PunktMapa::PunktMapa()
 	szerokoscG = 0.0;
 	dlugoscG = 0.0;
 	wysokosc = 0.0;
+	czas = "0";
 }
 
-PunktMapa::PunktMapa(double szerokoscG, double dlugoscG, double wysokosc,string czas)
+PunktMapa::PunktMapa(double szerokoscG, double dlugoscG, double wysokosc, string czas)
 {
 	this->dlugoscG = dlugoscG;
 	this->szerokoscG = szerokoscG;
@@ -32,7 +33,7 @@ void PunktMapa::setWysokosc(double wysokosc)
 
 void PunktMapa::setCzas(string czas)
 {
-	this->czas=czas;
+	this->czas = czas;
 }
 
 double PunktMapa::getSzerrokoscG()
