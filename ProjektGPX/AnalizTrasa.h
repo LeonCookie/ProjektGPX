@@ -12,13 +12,12 @@ public:
 	//metody
 	//dystans calkowity
 	void dystansCalkowity();
-	
-	
-	
 	//czas calkowity
 	void czasCalkowity();
-
-
 	//predkosc maks, minimalna
 	void predkosci();
+	// wysokosc Minimalna i maksymalna
+	void wysokosciMinMax();
+	//uzywa wszystkich metod do wysweitlania danych
+	void wyswietlDane();
 };

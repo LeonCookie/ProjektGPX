@@ -18,8 +18,6 @@ int main()
 	//GdyniaPlik.wypiszPunkty();
 	GdyniaPlik.oszukajObliczanie();
 	AnalizTrasa GdyniaAnaliza(GdyniaPlik.zwrocPunkty());
-	GdyniaAnaliza.czasCalkowity();
-	GdyniaAnaliza.dystansCalkowity();
-	GdyniaAnaliza.predkosci();
+	GdyniaAnaliza.wyswietlDane();
 
 }

@@ -162,3 +162,27 @@ void AnalizTrasa::predkosci()
     cout << "\nSrednia predkosc wynosi: " << srPredkosc << " m/s" << endl;
 
 }
+
+void AnalizTrasa::wysokosciMinMax()
+{
+    double minWysokosc = PunktyV[0].getWysokosc();
+    double maxWysokosc = PunktyV[0].getWysokosc();
+    for (auto punkt : PunktyV) {
+        if (punkt.getWysokosc() < minWysokosc) {
+            minWysokosc = punkt.getWysokosc();
+        }
+        if (punkt.getWysokosc() > maxWysokosc) {
+            maxWysokosc = punkt.getWysokosc();
+        }
+    }
+        cout << "Wysokosc minimalna: " << minWysokosc << endl;
+        cout << "Wysokosc maksymalna: " << maxWysokosc << endl;
+}
+
+void AnalizTrasa::wyswietlDane()
+{
+    czasCalkowity();
+    dystansCalkowity();
+    predkosci();
+    wysokosciMinMax();
+}
