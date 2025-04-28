@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ProjektGPXoR.cpp">
-      <Filter>Pliki źródłowe</Filter>
-    </ClCompile>
-    <ClCompile Include="AnalizTrasa.cpp">
+    <ClCompile Include="ProjektGPX.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="PlikGPX.cpp">
@@ -27,16 +24,27 @@
     <ClCompile Include="PunktMapa.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
+    <ClCompile Include="AnalizTrasa.cpp">
+      <Filter>Pliki źródłowe</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnalizTrasa.h">
-      <Filter>Pliki nagłówkowe</Filter>
-    </ClInclude>
     <ClInclude Include="PlikGPX.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="PunktMapa.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
+    <ClInclude Include="AnalizTrasa.h">
+      <Filter>Pliki nagłówkowe</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\..\..\..\..\Pulpit\Gdynia.txt">
+      <Filter>Pliki źródłowe</Filter>
+    </Text>
+    <Text Include="..\..\..\..\..\..\Pulpit\Czernica.txt">
+      <Filter>Pliki źródłowe</Filter>
+    </Text>
   </ItemGroup>
 </Project>

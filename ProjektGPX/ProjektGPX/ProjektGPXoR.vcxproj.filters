@@ -18,24 +18,24 @@
     <ClCompile Include="ProjektGPXoR.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="AnalizTrasa.cpp">
+    <ClCompile Include="PunktMapa.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
     <ClCompile Include="PlikGPX.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
-    <ClCompile Include="PunktMapa.cpp">
+    <ClCompile Include="AnalizTrasa.cpp">
       <Filter>Pliki źródłowe</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="AnalizTrasa.h">
+    <ClInclude Include="PunktMapa.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
     <ClInclude Include="PlikGPX.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
-    <ClInclude Include="PunktMapa.h">
+    <ClInclude Include="AnalizTrasa.h">
       <Filter>Pliki nagłówkowe</Filter>
     </ClInclude>
   </ItemGroup>

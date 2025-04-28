@@ -7,13 +7,13 @@ int main()
 	//trzeba zmienic plik .gpx na .txt
 
 	//L.R
-	//PlikGPX GdyniaPlik("C:/Users/leonr/OneDrive/Pulpit/Gdynia.txt");
-	//PlikGPX CzernicaPlik("C:/Users/leonr/OneDrive/Pulpit/Czernica.txt");
+	PlikGPX GdyniaPlik("C:/Users/leonr/OneDrive/Pulpit/Gdynia.txt");
+	PlikGPX CzernicaPlik("C:/Users/leonr/OneDrive/Pulpit/Czernica.txt");
 	//O.R
-	
-	PlikGPX GdyniaPlik("C:/Users/plack/Downloads/gdynia.txt");
-	//PlikGPX CzernicaPlik("sciezka rybaczyk");
-	
+	/*
+	PlikGPX GdyniaPlik("sciezka rybaczyk");
+	PlikGPX CzernicaPlik("sciezka rybaczyk");
+	*/
 	GdyniaPlik.wczytaj();
 	//GdyniaPlik.wypiszPunkty();
 	GdyniaPlik.oszukajObliczanie();
