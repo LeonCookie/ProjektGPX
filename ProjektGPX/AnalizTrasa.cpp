@@ -167,50 +167,16 @@ void AnalizTrasa::wysokosciMinMax()
 {
     double minWysokosc = PunktyV[0].getWysokosc();
     double maxWysokosc = PunktyV[0].getWysokosc();
-    double minKM = 0.0;
-    double maxKM = 0.0;
-    for (int i = 1; i < PunktyV.size();i++) {
-        double punkt = PunktyV[i].getWysokosc();
-        if (punkt < minWysokosc) {
-            minWysokosc = punkt;
-            minKM = i;
+    for (auto punkt : PunktyV) {
+        if (punkt.getWysokosc() < minWysokosc) {
+            minWysokosc = punkt.getWysokosc();
         }
-        if (punkt > maxWysokosc) {
-            maxWysokosc = punkt;
-            maxKM = i;
+        if (punkt.getWysokosc() > maxWysokosc) {
+            maxWysokosc = punkt.getWysokosc();
         }
     }
-    minKM = ktoryKM(minKM);
-    maxKM = ktoryKM(maxKM);
-    cout << "Wysokosc minimalna: " << minWysokosc<<" na km: "<<minKM << endl;
-    cout << "Wysokosc maksymalna: " << maxWysokosc << " na km:  " << maxKM << endl;
-}
-
-double AnalizTrasa::ktoryKM(int pkt)
-{
-    if (pkt <= 0 or pkt >= PunktyV.size()) {
-        return 0.0;
-    }
-    double km = 0.0;
-    for (int i = 1; i <= pkt; ++i)
-    {
-        double lon1 = PunktyV[i - 1].getDlugoscG();
-        double lat1 = PunktyV[i - 1].getSzerrokoscG();
-        double ele1 = PunktyV[i - 1].getWysokosc();
-
-        double lon2 = PunktyV[i].getDlugoscG();
-        double lat2 = PunktyV[i].getSzerrokoscG();
-        double ele2 = PunktyV[i].getWysokosc();
-
-        double h = haversine(lat1, lon1, lat2, lon2);
-        double dh = ele2 - ele1;
-
-        double d3D = sqrt(h * h + dh * dh);
-
-        km += d3D;
-    }
-
-    return km / 1000.0;
+        cout << "Wysokosc minimalna: " << minWysokosc << endl;
+        cout << "Wysokosc maksymalna: " << maxWysokosc << endl;
 }
 
 void AnalizTrasa::wyswietlDane()
