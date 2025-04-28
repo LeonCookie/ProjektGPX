@@ -21,7 +21,7 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{85e113da-806f-434c-b4b0-100abe1af47c}</ProjectGuid>
+    <ProjectGuid>{60eef979-8a0a-47b5-85c0-a160c6913650}</ProjectGuid>
     <RootNamespace>ProjektGPXoR</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>

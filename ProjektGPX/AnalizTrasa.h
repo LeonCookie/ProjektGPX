@@ -18,6 +18,9 @@ public:
 	void predkosci();
 	// wysokosc Minimalna i maksymalna
 	void wysokosciMinMax();
+	//zwraca ktory km dla punktu
+	double ktoryKM(int pkt);
 	//uzywa wszystkich metod do wysweitlania danych
 	void wyswietlDane();
+
 };

@@ -3,7 +3,6 @@
 //w przypadku pustej sceizki
 PlikGPX::PlikGPX()
 {
-	//cout << "Pusta sciiezka"; //drobny blad pozniej naprawie -> na popczatku w cmd wypieradala pusta sciezka ale tak nie jest bo dane sa zczytywane
 	sciezka = "";
 }
 
@@ -28,12 +27,12 @@ double wyciagnijWartoscStrzalka(string linia) {
 			if (!liczbaZpliku.empty()) {
 				return stod(liczbaZpliku);
 			}
-			break; 
+			break;
 		}
 	}
 
-	
-	return 0.0; 
+
+	return 0.0;
 }
 
 void PlikGPX::wczytaj()
@@ -68,18 +67,15 @@ void PlikGPX::wczytaj()
 				{
 					if (!liczbaZpliku.empty())
 					{
-						//z jakiegos powodu co 5,4 zwracana wartosc byla pusta. filtrujemy te dane
 						szer = stod(liczbaZpliku);
 						liczbaZpliku = "";
-						//cout <<setprecision(15)<<szer<< endl;//setprecision z bibliotekio iomanip sprawa ze w cmd liczba nie jest skracana
 					}
 				}
 				if (licznikcudzyslow == 4)
 				{
 					dl = stod(liczbaZpliku);
 					liczbaZpliku = "";
-					//cout << setprecision(15) << dl << endl;
-					break;//by dalej nie sprawdzac    <DO LEON> Nadal nie wiem po chuj ten break ale jak sie go wypierdoli to nie dzia³a, wiec niech na razie zostanie xD
+					break;
 				}
 			}
 		}
@@ -114,12 +110,12 @@ void PlikGPX::wczytaj()
 			}
 		}
 
-		
-		
+
+
 
 
 		//Zakoñczenie pomiaru
-		if (liniaPliku.find("</trkpt>") == 0) 
+		if (liniaPliku.find("</trkpt>") == 0)
 		{
 			PunktMapa punkt(szer, dl, wys, czas);
 			PunktyV.push_back(punkt);
@@ -131,20 +127,20 @@ void PlikGPX::wczytaj()
 //wypisywanie punktów na konsoli
 void PlikGPX::wypiszPunkty()
 {
-	
-	for (auto punkt : PunktyV) 
+
+	for (auto punkt : PunktyV)
 	{
-		cout <<"Szerokosc"<<endl << setprecision(15) << punkt.getSzerrokoscG()<<endl;
+		cout << "Szerokosc" << endl << setprecision(15) << punkt.getSzerrokoscG() << endl;
 		cout << " ";
 		cout << "Dlugosc" << endl << setprecision(15) << punkt.getDlugoscG() << endl;
 		cout << " ";
 		cout << "Wysokosc" << endl << setprecision(15) << punkt.getWysokosc() << endl;
 		cout << " ";
 		cout << "Czas" << endl << punkt.getCzas() << endl;
-		cout <<"======================" << endl<<endl;
+		cout << "======================" << endl << endl;
 
 	}
-	
+
 }
 
 
@@ -176,6 +172,7 @@ void PlikGPX::oszukajObliczanie()
 			break;
 		}
 	}
+	
 	cout << "-------------cheatsheet----------------" << endl;
 	cout << "oszukane czytane wartosci dystans: " << dis << endl;
 	cout << "ilosc wspiec(w m): " << ele << endl;

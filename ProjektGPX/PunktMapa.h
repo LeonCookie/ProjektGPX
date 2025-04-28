@@ -30,4 +30,3 @@ public:
 	string getCzas();
 
 };
-
