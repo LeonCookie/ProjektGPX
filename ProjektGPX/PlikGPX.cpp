@@ -181,7 +181,9 @@ void PlikGPX::oszukajObliczanie()
 	cout << "srednia predkosc (m/s): " << avgspeed << endl;
 	cout << "---------------------------------------" << endl;
 }
-
+/* oszukajObliczanie() czyta gotowe dane dystans czas predkosc zapisane w pliku przez inny program
+ wyswietlDane() liczy wszystko samemu na podstawie punktow gps i uwzglednia spadki wzniesienia czyli dystans 3D
+ dlatego wyniki sa inne bo jedna metoda bierze gotowe liczby a druga wszystko przelicza z terenu*/
 
 
 vector<PunktMapa> PlikGPX::zwrocPunkty()
