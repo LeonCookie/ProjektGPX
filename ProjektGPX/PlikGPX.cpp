@@ -27,7 +27,7 @@ double wyciagnijWartoscStrzalka(string linia) {
 			if (!liczbaZpliku.empty()) {
 				return stod(liczbaZpliku);
 			}
-			break;
+			break;// przerywamy  petle  i dalsze czytanie linii jest zbedne
 		}
 	}
 
@@ -75,7 +75,7 @@ void PlikGPX::wczytaj()
 				{
 					dl = stod(liczbaZpliku);
 					liczbaZpliku = "";
-					break;
+					break;// przerywamy  petle  i dalsze czytanie linii jest zbedne
 				}
 			}
 		}
@@ -83,24 +83,23 @@ void PlikGPX::wczytaj()
 		//szukanie wysykoœci
 		if (liniaPliku.find("<ele>") == 0)
 		{
-			wys = wyciagnijWartoscStrzalka(liniaPliku);
+			wys = wyciagnijWartoscStrzalka(liniaPliku);// uzywamy tylko dla wysokosci i wynikow z pliku poniewaz w samym pliku sa to liczby, a czas jest tekstem
 		}
 
 		//szukanie daty	
 		if (liniaPliku.find("<time>") == 0)
 		{
 			string liczbaZpliku = "";
-			int licznikZnacznika = 0;
+			int licznikZnacznika = 0;//dane znajduja sie miedzy > a <
 
 			for (char znak : liniaPliku) {
 				if (znak == '>') {
 					licznikZnacznika++;
-					continue;//ten te¿ do wyjebki
 				}
-				if (licznikZnacznika == 1 && znak != '<') {
+				else if (licznikZnacznika == 1 && znak != '<') {
 					liczbaZpliku += znak;
 				}
-				if (znak == '<' && licznikZnacznika == 1) {
+				else if (znak == '<' && licznikZnacznika == 1) {
 					if (!liczbaZpliku.empty()) {
 						czas = liczbaZpliku;
 						liczbaZpliku = "";
@@ -181,7 +180,7 @@ void PlikGPX::oszukajObliczanie()
 	cout << "srednia predkosc (m/s): " << avgspeed << endl;
 	cout << "---------------------------------------" << endl;
 }
-/* oszukajObliczanie() czyta gotowe dane dystans czas predkosc zapisane w pliku przez inny program
+/* oszukajObliczanie() czyta gotowe dane dystans czas predkosc zapisane w pliku 
  wyswietlDane() liczy wszystko samemu na podstawie punktow gps i uwzglednia spadki wzniesienia czyli dystans 3D
  dlatego wyniki sa inne bo jedna metoda bierze gotowe liczby a druga wszystko przelicza z terenu*/
 

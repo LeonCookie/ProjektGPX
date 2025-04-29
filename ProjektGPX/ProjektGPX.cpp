@@ -15,8 +15,8 @@ int main()
 	PlikGPX CzernicaPlik("sciezka rybaczyk");
 	*/
 	GdyniaPlik.wczytaj();
-	//GdyniaPlik.wypiszPunkty();
-	GdyniaPlik.oszukajObliczanie();
+	//GdyniaPlik.wypiszPunkty();//klasa bazowa PlikGPX, wypisuje wszystkie obiekty z vectora(klasy pomocniczej punkty)
+	//GdyniaPlik.oszukajObliczanie();//wyswietla wyniki z pliku
 	AnalizTrasa GdyniaAnaliza(GdyniaPlik.zwrocPunkty());
 	GdyniaAnaliza.wyswietlDane();
 
